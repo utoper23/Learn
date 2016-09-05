@@ -95,6 +95,7 @@
     sudo apt-get install -y --no-install-recommends libboost-all-dev
     sudo apt-get install -y libgflags-dev libgoogle-glog-dev liblmdb-dev
     sudo apt-get install -y python-numpy python-scipy
+    sudo apt-get install python-numpy python-scipy python-matplotlib python-sklearn python-skimage python-h5py python-protobuf python-leveldb python-networkx python-nose python-pandas python-gflags Cython ipython
 
 
 cd caffe
@@ -133,5 +134,7 @@ NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
     make pycaffe
     make matcaffe
 
-
-
+####为caffe设置环境变量
+    Vim .bashrc 尾部添加
+    export PYTHONPATH=/home/user/caffe/python/(你的caffe路径)
+    sourse .bashrc
